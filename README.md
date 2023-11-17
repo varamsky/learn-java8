@@ -75,9 +75,14 @@ This also mentions a few features which were introduced before java 8 in the Bef
 6. How to maintain multiple profiles in a Spring Application?
 7. What is a microservice? What is the advantage over monolithic architecture?
 8. What is RESTful?
+9. What is Eager vs Lazy loading in Hibernate?
  
 
 ### SQL
 1. Why indexing in SQL is useful?
    A SQL index is a quick lookup table that helps to find records that are frequently searched by a user. An index is fast, small, and optimized for quick look-ups. It is useful for establishing a connection between the relational tables, searching large tables, and fast retrieval of data from a database.
 
+
+### Interview Experiences
+
+- Infosys Power Programmer - 9 September, 2023
