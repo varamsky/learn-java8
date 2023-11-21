@@ -54,6 +54,107 @@ This also mentions a few features which were introduced before java 8 in the Bef
 18. Why is java not 100% Object-oriented language?
 19. `==` vs `equals()` method in java?
 20. Can we override a static method?
+21. What will happen if we try to compile and run below program?
+    ```java
+    interface Foo{ int x = 10;}
+        
+    public class Test {
+     public static void main(String[] args) {
+        Foo.x = 20;
+        System.out.println(Foo.x);
+     }
+    }
+    ```
+    A. Prints 10<br>
+    B. Prints 20<br>
+    C. Compile Time Error<br>
+    D. Runtime error because Foo.x is final.
+22. What are the valid statements for static keyword in Java?<br>
+    A. We can have static block in a class.<br>
+    B. The static block in a class is executed every time an object of class is created.<br>
+    C. We can have static method implementations in interface.<br>
+    D. We can define static block inside a method.
+23. Can we Use object to call a static method?
+24. What will be output of the below program?
+    ```java
+        public class Test {
+            public static void main(String[] args) {
+                Subclass s1 = new Subclass();
+                s1.foo(); // line 6
+                Super s = new Subclass();
+                s.foo(); // line 8
+            }
+        }
+        
+        class Super {
+            private void foo() {
+                System.out.println("Super");
+            }
+        }
+        
+        class Subclass extends Super {
+            public void foo() {
+                System.out.println("Subclass");
+            }
+        }
+    ```
+    A. Compile time error at line 6<br>
+    B. Compile time error at line 8<br>
+    C. Compile time error at both line 6 and 8<br>
+    D. Works fine and prints “Subclass” two times.
+25. What will be the output of below program? 
+    ```java
+        import java.io.IOException;
+        public class Test {
+            public static void main(String[] args) {
+                try {
+                    throw new IOException("Hello");
+                } catch (IOException | Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }
+    ```
+    A. Compile-time error 
+    B. Prints “Hello” 
+    C. Runtime Error
+26. Which of the below are unchecked exceptions in java?
+    A. RuntimeException
+    B. ClassCastException
+    C. NullPointerException
+    D. IOException
+27. What will be the output of below program?
+    ```java
+    import java.io.IOException;
+    
+    public class Test {
+        public static void main(String[] args) {
+            try {
+                throw new Exception("Hello ");
+            } catch (Exception e) {
+                System.out.print(e.getMessage());
+            } catch (IOException e) {
+                System.out.print(e.getMessage());
+            } finally {
+                System.out.println("World");
+            }
+        }
+    }
+    ```
+    A. Compile-time error<br>
+    B. Hello<br>
+    C. Hello World<br>
+    D. Hello Hello World<br>
+28. Which of the following statement(s) are true for java?<br>
+    A. JVM is responsible for converting Byte code to the machine code.<br>
+    B. We only need JRE to run java programs.<br>
+    C. JDK is required to compile java programs.<br>
+    D. JRE does not contain JVM
+29. Can we have two main methods in a java class?
+    A. Yes
+    B. No
+
+
 21. What is a Serializable interface?
 22. What is a Transient variable?
 23. Why do we go for jpa and ejb? Can we use any other framework?
@@ -75,7 +176,11 @@ This also mentions a few features which were introduced before java 8 in the Bef
 6. How to maintain multiple profiles in a Spring Application?
 7. What is a microservice? What is the advantage over monolithic architecture?
 8. What is RESTful?
-9. What is Eager vs Lazy loading in Hibernate?
+9. What are Client Certificates?
+10. Explain the use of PACT in microservices architecture?
+11. What is OAuth?
+12. What is difference between @Controller and @RestController?
+13. What is Eager vs Lazy loading in Hibernate?
  
 
 ### SQL

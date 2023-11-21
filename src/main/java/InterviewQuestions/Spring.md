@@ -54,3 +54,6 @@
     - OAuth means Open Authorization protocol. This protocol allows you to access the client applications on HTTP for third-party providers like Google, Github, etc.
     - It helps you to share resources stored on one site with another site without the need for their credentials.
 
+12. What is difference between @Controller and @RestController?
+    - `@RestController` is basically `@Controller` + `@ResponseBody`
+    - So it is used to reduce boilerplate else you would need to annotate with `@ResponseBody` on class level one-time or else add to all methods which use Response Body.
