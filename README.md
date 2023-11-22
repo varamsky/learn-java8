@@ -23,11 +23,12 @@ This also mentions a few features which were introduced before java 8 in the Bef
 1. Generics - Java5
    - [Coding with John - Generics](https://youtu.be/K1iu1kXkVoA)
 2. Mutable and Immutable types
-3. varargs - Introduced in Java 5
+3. Is Java pass-by-value or pass-by-reference?
+4. varargs - Introduced in Java 5
    - Safe usage of varargs
    - varargs vs array
-4. super() - Right now this is confusing for me
-	- and not using this.instance variable everytime you use an instance variable? how?
+5. super() - Right now this is confusing for me
+    - and not using this.instance variable everytime you use an instance variable? how?
 
 
 ## Interview questions
