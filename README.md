@@ -22,12 +22,14 @@ Some of the important Java 8 features are:
 This also mentions a few features which were introduced before java 8 in the BeforeJava8 package
 1. Generics - Java5
    - [Coding with John - Generics](https://youtu.be/K1iu1kXkVoA)
-2. Mutable and Immutable types
-3. Is Java pass-by-value or pass-by-reference?
-4. varargs - Introduced in Java 5
+2. Is Java pass-by-value or pass-by-reference?
+
+PENDING!
+1. Mutable and Immutable types
+2. varargs - Introduced in Java 5
    - Safe usage of varargs
    - varargs vs array
-5. super() - Right now this is confusing for me
+3. super() - Right now this is confusing for me
     - and not using this.instance variable everytime you use an instance variable? how?
 
 
@@ -156,6 +158,7 @@ This also mentions a few features which were introduced before java 8 in the Bef
     B. No
 
 
+PENDING!
 21. What is a Serializable interface?
 22. What is a Transient variable?
 23. Why do we go for jpa and ejb? Can we use any other framework?

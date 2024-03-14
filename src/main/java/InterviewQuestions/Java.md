@@ -30,7 +30,7 @@
    - In general, ArrayList is preferred for general use-cases.
 
 4. What is Marshalling and Unmarshalling in java?
-   - Marshalling is the process of converting Java objects into a format that is transferable over the wire(for example, XML).
+   - Marshalling is the process of converting Java objects into a format that is transferable over the wire(for example, XML or JSON).
    - Unmarshalling is the reversal of this process where data read from a wire format is converted into Java objects.
 
 5. What is a Marker Interface?
@@ -335,3 +335,36 @@ D. IOException
                 }
             }
             ```
+
+30. Difference between `Map` and `HashMap` in Java.
+    - `Map` is the interface whereas `HashMap` is the implementation.
+
+31. What do you mean by - "Java is a robust language"?
+    - Robust means strong and healthy. Robustness is the ability of a computer system to handle the errors during execution and handle the erroneous input.
+    - Java is robust because it uses strong memory management. There is lack of pointers that avoids security problems. There is automatic garbage collection in Java which runs on the Java Virtual Machine to get rid of objects which are not being used by a Java application anymore. There is exception handling and type checking mechanism in Java. All these points make Java robust.
+
+32. Difference between JVM, JRE and JDK?
+    - JVM - Provides environment where Java bytecode is run
+    - JRE - It is the implementation of JVM, so it provides certain libraries with which you can develop java application
+    - JDK - It provides the environment where java application are created for example, debugger, interpreter and so on..
+
+33. What is the use of Lambda Expression?
+    - Java by default is an object-oriented language so if you want to do functional programming you need to use Lambda Expression
+    - So we can write the implementation of the functional interfaces using lambda expressions
+    - (NEED TO READ MORE ON THIS...)
+
+34. How do you handle exceptions in Core Java?
+    - Here, explain try-catch-finally
+    - Usually we use finally block to release resources
+
+
+35. Explain what is try-with-resources?
+36. What are SOLID principles?
+37. What is Stream in Java?
+38. Difference between Sequential and Parallel Stream in Java 8?
+    - Sequential Stream are executed on a single core/thread whereas in parallel it gets executed on multiple cores/threads
+    - Because, of the above Sequential Stream is more predictable than Parallel Stream
+39. Intermediate and terminal operations available in Stream?
+    - Intermediate operations are lazy so if you call an intermediate operation like `filter()` on a stream, it won't be executed until you call a terminal operation like `collect()` on it.
+    - Intermediate operations - `filter()`
+    - Terminal operations - `collect()`
