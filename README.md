@@ -32,7 +32,6 @@ PENDING!
 3. super() - Right now this is confusing for me
     - and not using this.instance variable everytime you use an instance variable? how?
 
-
 ## Interview questions
 
 ### Java
