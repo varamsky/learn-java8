@@ -194,3 +194,4 @@ PENDING!
 ### Interview Experiences
 
 - Infosys Power Programmer - 9 September, 2023
+- IBM-Full stack developer - Technology Engineer - 26 Feb, 2024
