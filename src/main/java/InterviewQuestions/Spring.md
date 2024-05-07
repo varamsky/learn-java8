@@ -222,4 +222,13 @@
       2. Eureka Server - to Discover various microservices in your application
       3. Hystrix or Resilience4J - used for Fault Tolerance
 
-21. 
+21. How to handle circular dependency problem?
+    - Have a look at this video by [Concept && Coding - by Shrayansh](https://youtu.be/W-TgmKAnGG0?si=OuovlIrYvEFnHmHh&t=1649)
+    - Suppose there are 2 classes Order and Invoice. Order has Invoice as a parameter to be injected and vice-versa.
+    - There are 3 ways to solve this:-
+      1. Refactor code to remove the circular dependency(MOST RECOMMENDED)
+      2. Use `@Lazy` on `@Autowired` annotation on the parameter(on the parameter and not on the class itself). So, both Invoice and Order will be created but the injection will be postponed due to `@Lazy` and by that time both instance will already have been created.
+      3. Using `@PostConstruct`. NOT RECOMMENDED.
+
+22. How to implement and use global exception handlers?
+
