@@ -2,8 +2,11 @@
 
 1. What is Spring?
 2. What is a Bean?
-3. What is Dependency Injection?
-4. What is Inversion of Control?
+3. What is Inversion of Control(IOC)?
+    - IOC is an idea.
+    - The idea is to inverse the control. Instead of the programmer creating and managing objects, this is handled by Spring.
+4. What is Dependency Injection?
+    - Dependency Injection is the implementation of IOC
 5. `@Component` vs `@Bean`?
     - The `@Bean` annotation is a method-level annotation, whereas `@Component` is a class-level annotation.
     - The `@Component` annotation doesn't need to be used with the `@Configuration` annotation, whereas the `@Bean`
