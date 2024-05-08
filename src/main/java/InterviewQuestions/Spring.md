@@ -233,5 +233,24 @@
       2. Use `@Lazy` on `@Autowired` annotation on the parameter(on the parameter and not on the class itself). So, both Invoice and Order will be created but the injection will be postponed due to `@Lazy` and by that time both instance will already have been created.
       3. Using `@PostConstruct`. NOT RECOMMENDED.
 
-22. How to implement and use global exception handlers?
+22. Difference between EnumType.ORDINAL and EnumType.STRING?
+    -  We can mark a table column to use enums as shown below:-
+    - ```java
+       enum Roles {
+        USER, ADMIN, SUPERUSER
+       }
+       
+       @Column(nullable = false)
+       @Enumerated(EnumType.ORDINAL) // or EnumType.STRING
+       private Roles role;
+      ```
+    - But as you see above, we have 2 options to mark EnumType as ORDINAL or STRING.
+    - `ORDINAL` is efficient memory-wise but is not human-readable because when you describe the table in the database the column type is `TINYINT`(in MySQL, may vary in other databases)
+    - `STRING` takes more space but is also human-readable because when you describe the table the column type is `enum('USER','ADMIN','SUPERUSER')`
+    - With `STRING` you can do two things, without touching the database, that `ORDINAL` can't handle:
+       - you can change the order of your enums
+       - you can insert new enums in the middle of the enum list
+    - Both of these changes will alter the ordinal values of the enums already in use in the database, thus breaking existing data if you are using ORDINAL.
+
+23. How to implement and use global exception handlers?
 
