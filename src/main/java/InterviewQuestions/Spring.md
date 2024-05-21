@@ -252,5 +252,18 @@
        - you can insert new enums in the middle of the enum list
     - Both of these changes will alter the ordinal values of the enums already in use in the database, thus breaking existing data if you are using ORDINAL.
 
-23. How to implement and use global exception handlers?
+23. How to lazy load a `@ManyToOne` or `@OneToMany` attribute?
+    - ```java
+      @ManyToOne(fetch = FetchType.LAZY)
+      @JoinColumn(name="USER_ID")
+      private User user;
+      ```
+    - Use `FetchType.LAZY` with `@ManyToOne` annotation. Also, we might need to specify `@JoinColumn` and point it to the primary of the other table(DOUBT)!
+    - NOT VERY SURE ABOUT THIS!!
+
+24. How to implement and use global exception handlers?
+
+25. What is Cascade in Spring?
+
+
 
