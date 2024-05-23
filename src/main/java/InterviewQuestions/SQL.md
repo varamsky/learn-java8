@@ -33,3 +33,16 @@
     - Use of Foreign Keys(makes sure if data in other table changes then it is reflected in this table as well),
       Atomicity and Isolation ensures consistency because even if a power failure occurs the changes aren't committed
       and thus when you restart the system the state will not have been updated. Therefore, CONSISTENT.
+7. Why can't we use aggregate functions(like COUNT()) with WHERE clause?
+   - WHERE filters data before any aggregation happens. Aggregate functions need the entire dataset to calculate the summary value. Including them in WHERE would disrupt this order.
+   - We can use HAVING instead of the WHERE clause
+   - Also, An aggregate function can be used in a WHERE clause only if that clause is part of a subquery of a HAVING clause and the column name specified in the expression is a correlated reference to a group
+     - For example,
+     - ```sql
+       SELECT * FROM orders
+       WHERE order_id IN (
+          SELECT order_id FROM orders
+             GROUP BY customer_id
+          HAVING COUNT(*) > 5
+       );
+       ```

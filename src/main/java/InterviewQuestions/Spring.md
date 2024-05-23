@@ -262,8 +262,27 @@
     - NOT VERY SURE ABOUT THIS!!
 
 24. How to implement and use global exception handlers?
+    - Annotate a class with `@ControllerAdvice` annotation and each method with `@ExceptionHandler` annotation as shown below:-
+    - ```java
+      @ControllerAdvice
+      public class GlobalExceptionHandler {
+        // Here, UserAlreadyExistsException is a custom exception but this also works with exception provided with Spring by default
+          @ExceptionHandler
+          public ResponseEntity<ErrorResponse> handleUserAlreadyExistsException(UserAlreadyExistsException exception) {
+              ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST, exception.getMessage(), "email");
+            
+              return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+          }
+      }
+      ```
 
-25. What is Cascade in Spring?
+25. How to implement method level security in Spring?
+    - To implement method level security in Spring:-
+      - Annotate a Configuration class with `@EnableMethodSecurity` annotation.
+      - Now, we can use the method level security in our application with `@PreAuthorize`, `@PostAuthorize`, `@PreFilter` and `@PostFilter` annotations
+      - Read this for more information - [Spring Docs Method Security](https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html)
+
+26. What is Cascade in Spring?
 
 
 

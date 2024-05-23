@@ -339,21 +339,27 @@ D. IOException
 30. Difference between `Map` and `HashMap` in Java.
     - `Map` is the interface whereas `HashMap` is the implementation.
 
-31. What do you mean by - "Java is a robust language"?
+31. What is Shallow copy and Deep copy in Java?
+    - Shallow copy means that the copy is dependent on the original. If original change then copy also changes.
+    - If only primitive type fields or Immutable objects are there then there is no difference between shallow and deep copy in Java.
+      - Shallow copy - Creates a new object with the same field values as the original object, but for reference type fields (objects within objects), it only copies the references, not the actual objects themselves. Both the original and the copy point to the same underlying objects in memory.
+    - Check the examples given here - [GFG - Deep, Shallow and Lazy Copy with Java Examples](https://www.geeksforgeeks.org/deep-shallow-lazy-copy-java-examples/)
+
+32. What do you mean by - "Java is a robust language"?
     - Robust means strong and healthy. Robustness is the ability of a computer system to handle the errors during execution and handle the erroneous input.
     - Java is robust because it uses strong memory management. There is lack of pointers that avoids security problems. There is automatic garbage collection in Java which runs on the Java Virtual Machine to get rid of objects which are not being used by a Java application anymore. There is exception handling and type checking mechanism in Java. All these points make Java robust.
 
-32. Difference between JVM, JRE and JDK?
+33. Difference between JVM, JRE and JDK?
     - JVM - Provides environment where Java bytecode is run
     - JRE - It is the implementation of JVM, so it provides certain libraries with which you can develop java application
     - JDK - It provides the environment where java application are created for example, debugger, interpreter and so on..
 
-33. What is the use of Lambda Expression?
+34. What is the use of Lambda Expression?
     - Java by default is an object-oriented language so if you want to do functional programming you need to use Lambda Expression
     - So we can write the implementation of the functional interfaces using lambda expressions
     - (NEED TO READ MORE ON THIS...)
 
-34. How do you handle exceptions in Core Java?
+35. How do you handle exceptions in Core Java?
     - Here, explain try-catch-finally
     - Usually we use finally block to release resources
 
