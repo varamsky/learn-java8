@@ -121,6 +121,10 @@
             }
             ```
         - Some common unchecked exceptions in Java are `NullPointerException`, `ArrayIndexOutOfBoundsException` and `IllegalArgumentException`.
+        - For understanding in simple terms:-
+          - Checked exception - "Checked" -> already checked by java, no need to run the program -> therefore, this is checked at compile time.
+            - BUT, Checked Exceptions Can Occur During Runtime: Compile-time checks ensure your code handles potential exceptions, but they don't guarantee the exception won't occur during program execution. External factors like network issues, file system errors, or unexpected database responses can throw checked exceptions even if your code compiles cleanly.
+          - Unchecked exception - "Unchecked" -> not checked by java, need to run the program -> therefore, this is checked at runtime.
 
 16. `Comparator` vs `Comparable` in java?
     - `Comparator` and `Comparable` is mostly used for sorting.

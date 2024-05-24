@@ -280,6 +280,7 @@
     - To implement method level security in Spring:-
       - Annotate a Configuration class with `@EnableMethodSecurity` annotation.
       - Now, we can use the method level security in our application with `@PreAuthorize`, `@PostAuthorize`, `@PreFilter` and `@PostFilter` annotations
+      - And since Method Security is built using Spring AOP, it supports many use cases including AspectJ support.
       - Read this for more information - [Spring Docs Method Security](https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html)
 
 26. What is Cascade in Spring?
