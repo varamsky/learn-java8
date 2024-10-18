@@ -166,8 +166,8 @@
 
 18. How to load property values from the `application.properties` file?
     - To load property values from the `application.properties` file in a Spring Boot application, you can use the `@Value` annotation, or environment abstraction. Below are examples demonstrating these methods.
-      1. Using the @Value Annotation
-        The @Value annotation allows you to inject property values into fields, methods, and constructors.
+      1. Using the `@Value` Annotation
+        The `@Value` annotation allows you to inject property values into fields, methods, and constructors.
         Example:
         Assuming your `application.properties` file contains the following property: ```app.welcomeMessage=Welcome to our application!```
         You can inject this property into a field in one of your `@Component` or `@Service` classes like this:
@@ -223,7 +223,7 @@
     - We have these main components
       1. API Gateway - used to routes the requests to the specific microservice
       2. Eureka Server - to Discover various microservices in your application
-      3. Hystrix or Resilience4J - used for Fault Tolerance
+      3. Resilience4J(previously Hystrix) - used for Fault Tolerance
 
 21. How to handle circular dependency problem?
     - Have a look at this video by [Concept && Coding - by Shrayansh](https://youtu.be/W-TgmKAnGG0?si=OuovlIrYvEFnHmHh&t=1649)
@@ -283,7 +283,7 @@
       - And since Method Security is built using Spring AOP, it supports many use cases including AspectJ support.
       - Read this for more information - [Spring Docs Method Security](https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html)
 
-26. What is Cascade in Spring?
-
-
+26. Explain different Bean Scopes?
+27. What are `@Qualifier` and `@Primary` and state the difference between them?
+28. What is Cascade in Spring?
 
