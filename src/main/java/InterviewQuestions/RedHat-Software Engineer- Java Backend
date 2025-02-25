@@ -1,0 +1,132 @@
+Scenario
+You are given the following database schema for an e-commerce platform:
+Tables
+Customers
+customer_id (int, primary key)
+customer_name (varchar)
+registration_date (date)
+Orders
+order_id (int, primary key)
+customer_id (int, foreign key references Customers(customer_id))
+order_date (date)
+order_total (decimal)
+OrderItems
+order_item_id (int, primary key)
+order_id (int, foreign key references Orders(order_id))
+product_id (int)
+quantity (int)
+price (decimal)
+Products
+product_id (int, primary key)
+product_name (varchar)
+category (varchar)
+Question
+Write a SQL query to find the top 5 customers who have spent the most money on products in the "Electronics" category in the year 2023. The query should return the customer_id, customer_name, and the total amount spent.
+
+
+Answer - 
+
+
+SELECT c.customer_id, c.customer_name, SUM(oi.price * oi.quantity) as total_amount_spent
+from Customers c JOIN Orders o ON c.customer_id = o.customer_id
+JOIN OrderItems oi ON o.order_id = oi.order_id
+JOIN Products p ON p.product_id = oi.product_id
+WHERE o.order_date = 2023 AND p.category = 'Electronics'
+GROUP BY customer_id, customer_name
+ORDER BY total_amount_spent DESC
+LIMIT 5;
+
+
+Scenario
+You are given a binary tree where each node contains an integer value. You need to find the maximum sum of non-adjacent nodes. Two nodes are considered adjacent if one is the parent of the other. Implement a solution using dynamic programming and Java 8 features.
+Question
+Write a Java method that returns the maximum sum of non-adjacent nodes in a binary tree. The method should use dynamic programming to store intermediate results and Java 8 features like streams and lambda expressions to enhance readability and efficiency.
+Requirements
+Implement a class TreeNode to represent a node in the binary tree.
+Implement a method maxSumNonAdjacent(TreeNode root) that returns the maximum sum of non-adjacent nodes.
+Use dynamic programming to store results for subproblems.
+Use Java 8 features such as streams and lambda expressions in your implementation.
+
+Example - 
+          3        
+    2              5
+       3                    1
+Any number of nodes can be used to have the max sum
+DFS
+
+3 + 
+
+
+
+
+
+
+Answer -
+
+
+
+
+
+
+
+
+
+class TreeNode {
+	int val;
+	TreeNode left, right;
+
+	TreeNode(int val){
+		this.val = val;
+		this.left = null;
+		this.right = null;
+	}
+}
+
+
+
+public class MaxSumNonAdjacent {
+
+// Write method to calculate the maximum sum of non-adjacent nodes
+    public int maxSumNonAdjacent(TreeNode root) {
+	int[] result = dfs(root);
+	return Math.max(result[0], result[1]);
+}
+
+	public int[] dfs(TreeNode node){
+		if(node == null) return new int[]{0, 0};
+
+		int[] left = dfs(node.left);
+		int[] right = dfs(node.right);
+	
+		// include then it is non adjacent
+		int include = node.val + left[1] + right[1];
+		// exclude then it is adjacent
+		int exclude = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+
+		return new int[](include, exclude);
+	}
+
+
+
+public static void main(String[] args) {
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(5);
+        root.left.right = new TreeNode(3);
+        root.right.right = new TreeNode(1);
+
+        MaxSumNonAdjacent solver = new MaxSumNonAdjacent();
+        System.out.println("Maximum sum of non-adjacent nodes: " + solver.maxSumNonAdjacent(root));
+    }
+
+
+}
+
+
+If the user is seeing a website is slow, what all could be the issue and how will you fix them?
+
+Database -> indexing -> short query fetch time
+Replicas 
+Caching -> redis 
+Backend -> 
+Frontend -> imag(reduce image size), CDN
