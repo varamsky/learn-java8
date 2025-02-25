@@ -1,4 +1,22 @@
-Scenario
+1. What is the benefit of using Spring when building a microservice application?
+
+2. What is the use of actuators in Spring?
+- Health Monitoring
+- Metrics Monitoring
+- Dynamically change log levels without restarting the app
+- Check database connection health and query performance
+
+3. What is serialization in Java and its uses?
+- Real life uses -> Caching, Storing user sessions
+
+4. HashMap vs LinkedHashMap?
+- No guarantee or ordering in HashMap whereas LinkedHashMap guarantees ordering.
+
+5. Explain about Kafka consumer and producer mechanism?
+
+6. What is a Balanced Binary Tree?
+
+7. Scenario
 You are given the following database schema for an e-commerce platform:
 Tables
 Customers
@@ -37,7 +55,7 @@ ORDER BY total_amount_spent DESC
 LIMIT 5;
 
 
-Scenario
+8. Scenario
 You are given a binary tree where each node contains an integer value. You need to find the maximum sum of non-adjacent nodes. Two nodes are considered adjacent if one is the parent of the other. Implement a solution using dynamic programming and Java 8 features.
 Question
 Write a Java method that returns the maximum sum of non-adjacent nodes in a binary tree. The method should use dynamic programming to store intermediate results and Java 8 features like streams and lambda expressions to enhance readability and efficiency.
@@ -123,7 +141,7 @@ public static void main(String[] args) {
 }
 
 
-If the user is seeing a website is slow, what all could be the issue and how will you fix them?
+9. If the user is seeing a website is slow, what all could be the issue and how will you fix them?
 
 Database -> indexing -> short query fetch time
 Replicas 
