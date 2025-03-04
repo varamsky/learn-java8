@@ -1,3 +1,5 @@
+# 1st Interview - 25/02/2025
+
 1. What is the benefit of using Spring when building a microservice application?
 
 2. What is the use of actuators in Spring?
@@ -148,3 +150,111 @@ Replicas
 Caching -> redis 
 Backend -> 
 Frontend -> imag(reduce image size), CDN
+
+# 2nd Interview
+
+They work on communications between different upstreams and downstreams services.
+Data transformation(Transformation of one JSON structure to another)
+
+1. How do you do Service to service communication in spring?
+   - REST API (WebClient) - Synchronous
+   - Asynchronous with redis or kafka
+   - Service discovery is also service to service communication
+2. What is synchronous vs asynchronous communication?
+   - No blocking in asynchronous
+   - Blocking in synchronous - code will wait there for result.
+3. Define kafka working and How is kafka asynchronous?
+4. Operational level challenges with containerisation and kubernestes?
+   - Security
+   - Testing
+   - Storage and consistency
+   - Resource Management & Scaling Issues
+   - Networking & Service Discovery
+   - Logging & Monitoring Complexity
+5. What all do we need to handle in data transformation services?
+   - Format Conversion
+   - Data Cleansing & Standardization
+   - Schema Mapping & Transformation
+   - Filtering & Masking Sensitive Data
+   - Error Handling & Data Validation
+7. What Cache invalidation strategies to use in data transformation services?
+8. How and where to look for bottlenecks in such a system?
+9. how to MANAGE large number of REST apis in production?
+   - API Versioning Strategy
+   - API Documentation & Discovery
+   - Testing Standards(like common HTTP status codes 404 and so on..) and Error Handling
+   - API Rate Limiting & Throttling
+   - API Security best practices
+   - API Monitoring & Logging
+   - API Scaling & Load Balancing
+11. Create a Spring Boot application
+
+1. Consumes a simple JSON message representing a customer change from an upstream.
+2. Transforms it to a different JSON format for a downstream system
+3. Handles potential validation errors
+4. Logs the transformation process
+
+
+Input: 
+
+`{
+  "id": "0012500001ABC123",
+  "type": "Customer",
+  "attributes": {
+    "Name": "Acme Corporation",
+    "Industry": "Technology",
+    "BillingCity": "San Francisco",
+    "BillingCountry": "USA",
+    "AnnualRevenue": 10000000,
+    "IsActive": true,
+    "LastModifiedDate": "2023-03-15T14:30:22Z"
+  }
+}`
+Output:
+
+`{
+  "customerId": "0012500001ABC123",
+  "customerName": "Acme Corporation",
+  "details": {
+    "sector": "Technology",
+    "location": {
+      "city": "San Francisco",
+      "country": "USA"
+    },
+    "financials": {
+      "revenue": 10000000
+    },
+    "status": "ACTIVE",
+    "lastUpdated": "2023-03-15T14:30:22Z"
+  }
+}`
+
+- ANSWER =
+- Transform JSON structure with MapStruct somewaht like this
+- @Mapper
+public interface UserMapper {
+    
+    UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
+
+    @Mapping(source = "name", target = "full_name")
+    @Mapping(source = "email", target = "email_address")
+    UserDTO toUserDTO(User user);
+
+}
+- Do validations like this
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class User {
+    
+    @NotBlank(message = "Name is required")
+    private String name;
+
+    @Email(message = "Invalid email format")
+    @NotBlank(message = "Email is required")
+    private String email;
+
+    @Min(value = 18, message = "Must be at least 18")
+    private int age;
+}
