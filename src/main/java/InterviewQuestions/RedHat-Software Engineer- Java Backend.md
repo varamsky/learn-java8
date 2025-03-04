@@ -151,7 +151,7 @@ Caching -> redis
 Backend -> 
 Frontend -> imag(reduce image size), CDN
 
-# 2nd Interview
+# 2nd Interview - 04/03/2025
 
 They work on communications between different upstreams and downstreams services.
 Data transformation(Transformation of one JSON structure to another)
