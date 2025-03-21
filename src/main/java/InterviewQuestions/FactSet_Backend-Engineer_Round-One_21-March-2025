@@ -1,0 +1,83 @@
+# 1st round - 21 March 2025
+
+1. Difference between Abstract Classes and Interfaces? When to use which?
+2. Implementation of Singleton class? When to use with real use-case examples?
+3. Difference between String and StringBuffer?
+4. Give output of this:-
+  ```
+  class Test {
+    public static void main(String args[])  {  
+        System.out.print("a");  
+        
+        try {  
+          System.out.print("b");  
+          throw new IllegalArgumentException();  
+        }  
+        catch (RuntimeException e){  
+            System.out.print("c");  
+        }  
+        finally {  
+            System.out.print("d");  
+        }
+        
+        System.out.print("e"); 
+    }  
+}
+  ```
+Output :- abcde
+5. Give output of this:-
+```
+public class InterviewTest {
+
+    public static void main(String[] args) {
+        int num = 100;
+        methodOne(num);
+        System.out.println(num); // 100
+
+        MyObject obj = new MyObject();
+        obj.value = 50;
+        methodTwo(obj);
+        System.out.println(obj.value); // 50
+
+        methodThree(obj);
+        System.out.println(obj.value); // 50
+    }
+    
+    public static void methodOne(int n) {
+        n = 200;
+    }
+
+    public static void methodTwo(MyObject o) {
+        o.value = 150;
+    }
+
+    public static void methodThree(MyObject o) {
+        o = new MyObject();
+        o.value = 300;
+    }
+}
+
+
+class MyObject{
+    int value;
+}
+```
+Output:- 
+100
+150
+150
+6. ArrayList vs LinkedList? Which to use when?
+7. Name a few synchronized Collection classes?
+8. How does concurrent HashMap handle concurrency?
+9. Name a few HTTP status codes that you have used?
+10. Have you done unit testing in java?
+11. Solve this question:-
+  // input [1,2,3,4] 
+// output [24,12,8,6]
+i.e., multiplication of all numbers except the current index
+(SOLVED using prefix and postfix arrays)
+12. Solve:-
+// Input: [1,1,2,4,6,5,6,4] 
+// output: 2
+i.e., return the first non-recurring number else return null
+(SOLVED using a LinkedHashMap because it maintains the order)
