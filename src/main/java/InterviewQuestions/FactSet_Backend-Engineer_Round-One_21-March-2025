@@ -81,3 +81,19 @@ i.e., multiplication of all numbers except the current index
 // output: 2
 i.e., return the first non-recurring number else return null
 (SOLVED using a LinkedHashMap because it maintains the order)
+
+# Round 2 - 3rd April
+
+give intro
+1. What is singleton? where do you use it? write a singleton?
+2. Show difference between eager and lazy loading in singleton? when to use both?
+3. Shallow vs deep copy in java? write class in java and show?
+4. Which stream functions have you used?
+        Solve using streams :- Get the average of the length of strings = "Java”, “Python”, “C++”, “JavaScript”, “Ruby"
+5. hashmap vs hashtable
+6. what is linked list? How to clone a linked list?
+7. what is doubly-linked list? How to clone a doubly_linked list?
+8. difference between linked list and array?
+9. Clone a single linked list which also has a random pointer?(used hashmaps) Can you do in O(1) space?(used the input list as hashmap)
+10. Have use used microservices? why do we use them?
+11. Different types of scaling? What is load balancer?
