@@ -1,0 +1,19 @@
+# 1st Interview - 10 April 2025
+
+1. Introduce yourself.
+2. Explain the project it's System design
+3. What are access specifiers in java? default vs protected access specifier?
+4. What is marker interface? Can you have a default method inside it?
+5. What is Functional Interface? Share real-life use cases?
+6. Comparable vs comparator?
+7. There is a Player class with player's name and score. Given a list of Players, get list of players with score between 25 to 75?
+  - players.stream().filter(p->p.score >= 25 && p.score <= 75).collect(Collectors.toList());
+8. Find the occurences of "abc" in the list of strings given below:-(do it in O(N))
+  Input - {abc,axnbc,abc} Output = 3
+  Input - {abcabcabc}, Output = 3
+  Input - {anklbc}, Output = 1
+  Input - {acb}, Output = 0
+9. Rotate an integer array to the right with a given rotational factor?
+  Input = 1,2,3,4,5,6
+  Output= 5,6,1,2,3,4
+  Rotation factor = 2
