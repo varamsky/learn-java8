@@ -97,3 +97,66 @@ give intro
 9. Clone a single linked list which also has a random pointer?(used hashmaps) Can you do in O(1) space?(used the input list as hashmap)
 10. Have use used microservices? why do we use them?
 11. Different types of scaling? What is load balancer?
+
+# Round 3 - 15 April
+
+He gave his intro
+I gave my intro
+1. Are java variables passed by value or passed by reference?
+  - I said objects are passed by reference and primitives are passed by value(CORRECT :- ALL VARIABLES ARE PASSED BY VALUE)
+  - Got confused on cross question - didn't satisfy with my answer
+  - ``` public class Main {
+
+    public static void main(String[] args) {
+        Employee emp = new Employee("abc");
+        updateName(emp);
+        System.out.println(emp.getName()); // abc
+    }
+
+    public void updateName(Employee emp){
+//        emp.setName(); // content can change
+        emp = new Employee("xyz"); // can't be reassigned
+
+        // key -> value
+
+        // hashmap key should not be mutable
+        // student -> name,  roll and list<int> marks
+        // immutable
+        // hashCode() and equals()
+        // final, contructor
+    }
+} ```
+2. Should the hashmap key be immutable?(what do I need to do if I need to use a class as key in the hashmap) What will be issue if it is mutable?
+3. How to make a class immutable? Write an immutable class.
+4. Given an array of integers and a target. See if the array contains a triplet whose sum is equal to the target.
+  - ```
+// [4,1,2,3,5,8] // can have duplicates
+// target = 10
+// [2,3,5]
+
+// O(N ^ 2)
+public boolean findTriplet(int[] nums, int target){
+    int size = nums.length;
+    if(size < 3) return false;
+
+    Arrays.sort(nums);
+    
+    for(int i=0;i<size-2;i++){
+        int left = i + 1;
+        int right = size-1;
+
+        while(left < right){
+            int sum = nums[i] + nums[left] + nums[right];
+
+            if(sum == target){
+                return true;
+            } else if(sum < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+    }
+    return false;
+}
+```
